@@ -57,7 +57,7 @@ export default function Page() {
       ...row,
     }));
     const { error: passengerError } = await supabase.from("passengers").insert(passengers);
-    if (error) return alert(passengerError.message);
+    if (passengerError) return alert(passengerError.message);
 
     // if success, redirect
     router.push("/my-booking");
